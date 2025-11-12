@@ -1,5 +1,3 @@
-//production level boilerpate code
-
 //1. Import modules
 const express = require('express');
 const path = require('path');
@@ -12,9 +10,9 @@ const app = express();
 
 // 3. Middlewares
 app.use(helmet()); // add security headers
-app.use(morgan('combined')); // logs requests
+app.use(morgan('dev')); // logs requests
 app.use(express.json()); // parse JSON bodies
-app.use(express.urlencoded({ extended: true })); // parse URL-encoded bodies
+// app.use(express.urlencoded({ extended: true })); // parse URL-encoded bodies
 app.use(express.static(path.join(__dirname, 'public'))); // serve static files
 
 //4. Route
